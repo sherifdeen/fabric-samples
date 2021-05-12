@@ -12,12 +12,39 @@ test:
         rateControl: 
           type: fixed-load
           opts:
-            tps: 1
+            tps: 20
         workload:
           module: workload/setTokenizedAsset.js
           arguments:
             #assets: 10
             contractId: pgacc
+        
+      - label: Launch 
+        description: Start the sale of tokenized asset
+        txNumber: 5000
+        #txDuration: 90
+        rateControl: 
+            type: fixed-load
+            opts:
+              tps: 20
+        workload:
+            module: workload/launchTokenizedAsset.js
+            arguments:
+              #assets: 10
+              contractId: pgacc
+      - label: Buy 
+        description: Purchase of GRET with ERC-20 token 
+        txNumber: 5000
+        #txDuration: 90
+        rateControl: 
+          type: fixed-load
+          opts:
+            tps: 20
+        workload:
+          module: workload/buyTokenizedAsset.js
+          arguments:
+            #assets: 10
+            contractId: ttcc
 monitors:
   resource:
   - module: docker
