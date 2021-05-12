@@ -1,0 +1,131 @@
+name: Calier test
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+
+channels:
+  - channelName: pmchannel
+    contracts:
+    - id: pgacc
+    - id: amcc
+    - id: ttcc
+
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+      - name: 'User1'
+        clientPrivateKey:
+          pem: |-
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgob2vBSs9Ry1jcxZL
+            BQQCbK4LbUO6LlK6pm2Us6qqz+6hRANCAATJUkqlnxbXJpVbv6pkkx6bK6+zCJCO
+            v7+c3kicrNnmnLIUU3ucqKSs4RIPph7/CDKJRdBkbsKGQ6ZlnSTrhLtA
+            -----END PRIVATE KEY-----
+        clientSignedCert:
+          pem: |-
+            -----BEGIN CERTIFICATE-----
+            MIICsjCCAlmgAwIBAgIUfLrORXz1hAIN/Bcgqk1Z69tNHeQwCgYIKoZIzj0EAwIw
+            cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
+            EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+            Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjEwNTA0MTUyMjAwWhcNMjIwNTA0MTUyNzAw
+            WjBdMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZjbGllbnQxDjAMBgNVBAMTBXVzZXIx
+            MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyVJKpZ8W1yaVW7+qZJMemyuvswiQ
+            jr+/nN5InKzZ5pyyFFN7nKikrOESD6Ye/wgyiUXQZG7ChkOmZZ0k64S7QKOB4zCB
+            4DAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQULKl3/pGt
+            MlM9YPYwhXYBfXri1G8wHwYDVR0jBBgwFoAUj3oqPNp3Ujzw7uXXjoBxuK8oMRow
+            JgYDVR0RBB8wHYIbc2hlcmlmZGVlbmxhd2FsLmV4YW1wbGUuY29tMFgGCCoDBAUG
+            BwgBBEx7ImF0dHJzIjp7ImhmLkFmZmlsaWF0aW9uIjoiIiwiaGYuRW5yb2xsbWVu
+            dElEIjoidXNlcjEiLCJoZi5UeXBlIjoiY2xpZW50In19MAoGCCqGSM49BAMCA0cA
+            MEQCIDM1UPTRJtPkfjjU6L03iLc09CC2DLvt3jCqrdBfRGg2AiBOLqk1SVupxxl4
+            1ACtRdrdbA4oPUPTrPCrb07TOKiRoQ==
+            -----END CERTIFICATE-----
+      - name: 'GFMAdmin'
+        clientPrivateKey:
+          pem: |-
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgvqpw3P/On+BndHNA
+            x2XiFsbdWm+2RRMXCatHXPn15fyhRANCAAT2MLXohz+6ZpFJRO+4p8/yLRCLtqK3
+            n0cHPfo/a/JxlCvtL4q5HmMYTgswuOisygTIWpHyNxnPDFL4TpCY4hYa
+            -----END PRIVATE KEY-----
+          #path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/GFMAdmin\@org1.example.com/msp/keystore/e8ac8678300fecb09de8d8a63ab1d568c8a80f6ff8170b994d1ad720d0f49d97_sk'
+        clientSignedCert:
+          pem: |-
+            -----BEGIN CERTIFICATE-----
+            MIICmDCCAj6gAwIBAgIUTUzsQ5FF44nE5qW0eW5q5dB+B5IwCgYIKoZIzj0EAwIw
+            cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
+            EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+            Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjEwNTA0MTUyNDAwWhcNMjIwNTA0MTUyOTAw
+            WjBtMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMRwwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMREw
+            DwYDVQQDEwhHRk1BZG1pbjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABPYwteiH
+            P7pmkUlE77inz/ItEIu2orefRwc9+j9r8nGUK+0virkeYxhOCzC46KzKBMhakfI3
+            Gc8MUvhOkJjiFhqjgbgwgbUwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAw
+            HQYDVR0OBBYEFDXrQ/gfGyjAQ6hSaYwVQ1HO5+nJMB8GA1UdIwQYMBaAFI96Kjza
+            d1I88O7l146AcbivKDEaMCYGA1UdEQQfMB2CG3NoZXJpZmRlZW5sYXdhbC5leGFt
+            cGxlLmNvbTAtBggqAwQFBgcIAQQheyJhdHRycyI6eyJub2RlTmFtZSI6IkdGTUFk
+            bWluIn19MAoGCCqGSM49BAMCA0gAMEUCIQCn7fVp5gM1gdGn3aWujKecFv0sj5Vf
+            6Giejc6ynLnNwwIgU8U1szzrhPkTDL5FutH9RHxg/9oI7Zn2Ktp8M85W99g=
+            -----END CERTIFICATE-----
+          #path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/GFMAdmin\@org1.example.com/msp/signcerts/cert.pem'
+      - name: 'Amy'
+        clientPrivateKey:
+          pem: |-
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJAUVaI8cM5rmr3Qx
+            TiOHjAAAyFZKCaUmkElygPVntbOhRANCAAQtNpZLOJK6qh60AN0UomoYmkh3jrCp
+            +JFs0tcUSws90qcJ1DObsRidqgFElE9kCN6OewlZ1RD9kM+VwCsNstUS
+            -----END PRIVATE KEY-----
+          #path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Amy\@org1.example.com/msp/keystore/$AMYPATH'
+        clientSignedCert:
+          pem: |-
+            -----BEGIN CERTIFICATE-----
+            MIICjjCCAjSgAwIBAgIUWZ2HRlXuK8Q6aSopiFjJQLlbPVEwCgYIKoZIzj0EAwIw
+            cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
+            EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+            Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjEwNTA0MTUyNDAwWhcNMjIwNTA0MTUyOTAw
+            WjBoMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMRwwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMQww
+            CgYDVQQDEwNBbXkwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQtNpZLOJK6qh60
+            AN0UomoYmkh3jrCp+JFs0tcUSws90qcJ1DObsRidqgFElE9kCN6OewlZ1RD9kM+V
+            wCsNstUSo4GzMIGwMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMB0GA1Ud
+            DgQWBBS4YA9iOqaHP0xko15Aq+ya6A2UmjAfBgNVHSMEGDAWgBSPeio82ndSPPDu
+            5deOgHG4rygxGjAmBgNVHREEHzAdghtzaGVyaWZkZWVubGF3YWwuZXhhbXBsZS5j
+            b20wKAYIKgMEBQYHCAEEHHsiYXR0cnMiOnsibm9kZU5hbWUiOiJBbXkifX0wCgYI
+            KoZIzj0EAwIDSAAwRQIhAL0sBhgwvBZTXLta7qyovuxQzXj63myNbHwXSY4XU7wO
+            AiBXzMjeIm7XuozWGVFbMk76qYDF9oxUntD0gN/wMR/a2g==
+            -----END CERTIFICATE-----
+          #path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Amy\@org1.example.com/msp/signcerts/cert.pem'
+      - name: 'John'
+        clientPrivateKey:
+          pem: |-
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg3jucFuoX9OAiaKdP
+            30Z5+iGfPkoW16cxTE1cJlhxN4GhRANCAAQxRJhp1W1eJog/o4Kk+otMEgMduOD5
+            pNz2eZfdhLGe7x+Ty0YJWOoh82znsU4hOKq3NGQQBKGGlDWoiKgxbIMN
+            -----END PRIVATE KEY-----
+          #path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/John\@org1.example.com/msp/keystore/$JOHNPATH'
+        clientSignedCert:
+          pem: |-
+            -----BEGIN CERTIFICATE-----
+            MIICjzCCAjagAwIBAgIUUW/y/1BmgdG1V12c1fE9um2zw4swCgYIKoZIzj0EAwIw
+            cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
+            EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+            Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjEwNTA0MTUyNDAwWhcNMjIwNTA0MTUyOTAw
+            WjBpMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMRwwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMQ0w
+            CwYDVQQDEwRKb2huMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMUSYadVtXiaI
+            P6OCpPqLTBIDHbjg+aTc9nmX3YSxnu8fk8tGCVjqIfNs57FOITiqtzRkEAShhpQ1
+            qIioMWyDDaOBtDCBsTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADAdBgNV
+            HQ4EFgQUHRz4J4hbkgnZ64tkRcO+PGTe9ZQwHwYDVR0jBBgwFoAUj3oqPNp3Ujzw
+            7uXXjoBxuK8oMRowJgYDVR0RBB8wHYIbc2hlcmlmZGVlbmxhd2FsLmV4YW1wbGUu
+            Y29tMCkGCCoDBAUGBwgBBB17ImF0dHJzIjp7Im5vZGVOYW1lIjoiSm9obiJ9fTAK
+            BggqhkjOPQQDAgNHADBEAiAaliKS1Ub2UnSv4f5NNfrufWpTfYXfNZhnRuUuJ6B8
+            cgIgASY817nKeYV445Q0T8Bu54LGAGk3zlbhYounv94lqBA=
+            -----END CERTIFICATE-----
+          #path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/John\@org1.example.com/msp/signcerts/cert.pem'
+    connectionProfile:
+      path: '../../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml'
+      discover: true

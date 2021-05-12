@@ -1,0 +1,27 @@
+test:
+    name: basic-contract-benchmark
+    description: test benchmark
+    workers:
+      type: local
+      number: 10
+    rounds:
+      - label: Register 
+        description: Registration of a tokenized asset
+        txNumber: 5000
+        #txDuration: 90
+        rateControl: 
+          type: fixed-load
+          opts:
+            tps: 1
+        workload:
+          module: workload/setTokenizedAsset.js
+          arguments:
+            #assets: 10
+            contractId: pgacc
+monitors:
+  resource:
+  - module: docker
+    options:
+      interval: 1  
+      containers:
+      - orderer.example.com
