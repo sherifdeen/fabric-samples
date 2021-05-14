@@ -9,20 +9,47 @@ test:
         description: Registration of a tokenized asset
         txNumber: 
         - 1000
+        - 3500
+        - 7500
+        - 10000
+        #txDuration: 90
         rateControl: 
+          - type: fixed-load
+            opts:
+            tps: 50
+          - type: fixed-load
+            opts:
+            tps: 50
+          - type: fixed-load
+            opts:
+            tps: 50
           - type: fixed-load
             opts:
             tps: 50
         workload:
           module: workload/setTokenizedAsset.js
           arguments:
+            #assets: 10
             contractId: pgacc
         
       - label: Launch 
         description: Start the sale of tokenized asset
         txNumber: 
         - 1000
+        - 3500
+        - 7500
+        - 10000
+        #txDuration: 90
         rateControl: 
+          - type: fixed-load
+            opts:
+            tps: 50
+          - type: fixed-load
+            opts:
+            tps: 50
+          - type: fixed-load
+            opts:
+            tps: 50
           - type: fixed-load
             opts:
             tps: 50
@@ -35,7 +62,20 @@ test:
         description: Purchase of GRET with ERC-20 token 
         txNumber:
         - 1000
+        - 3500
+        - 7500
+        - 10000
+        #txDuration: 90
         rateControl: 
+          - type: fixed-load
+            opts:
+            tps: 50
+          - type: fixed-load
+            opts:
+            tps: 50
+          - type: fixed-load
+            opts:
+            tps: 50
           - type: fixed-load
             opts:
             tps: 50
